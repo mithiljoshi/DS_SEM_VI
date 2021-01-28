@@ -37,7 +37,7 @@ def projection_on_complex(our_data):
 
 def back_to_normal(new_basis_data):
     a_k = np.dot(np.linalg.inv(create_complex_matrix(len(new_basis_data))), new_basis_data)
-    a_k = a_k[::1][::2]
+
     return a_k
     
 changed_data = projection_on_complex(canny_img)
@@ -46,14 +46,6 @@ normal_data = back_to_normal(changed_data)
 plt.imshow(normal_data.real)
 plt.show()
 
-
-# In[80]:
-
-
-A = [[1,2,3], [4,5,6], [6,6,6]]
-print(np.shape(A))
-A = A[::1][::2]
-print(A)
 
 
 # In[ ]:
